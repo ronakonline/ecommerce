@@ -1,0 +1,125 @@
+{{> csslinks}}
+
+{{> header}}
+
+    {{#if message}}
+        <script>alert('{{message}}')</script>
+    {{/if}}
+       <!-- breadcrumb start -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="page-title">
+                        <h2>Manage Account</h2>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active">Account</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb End -->
+
+
+        <!-- section start -->
+            <section class="section-b-space">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="account-sidebar"><a class="popup-btn">my account</a></div>
+                            <div class="dashboard-left">
+                                <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left"
+                                            aria-hidden="true"></i> back</span></div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a href="#" id="dashboardlink">Account Info</a></li>
+                                        <li><a href="#" id="addresslink">Address Book</a></li>
+                                        <li><a href="#" id="orderslink">My Orders</a></li>
+                                        <li><a href="/user/changepassword" >Change Password</a></li>
+                                        <li class="last"><a href="/logout">Log Out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9" id="dashboard">
+                            <div class="dashboard-right">
+                                <div class="dashboard">
+                                    <div class="page-title">
+                                        <h2>My Dashboard</h2>
+                                    </div>
+                                    <div class="welcome-msg">
+                                        <p>Hello, {{name}} !</p>
+                                    
+                                    </div>
+                                    <div class="box-account box-info">
+                                       
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="box">
+                                                    <div class="box-title">
+                                                        <h3>Contact Information</h3><a href="#">Edit</a>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <h6>{{name}}{{lastname}}</h6>
+                                                        <h6>{{email}}</h6>
+                                                        <h6><a href="/user/changepassword">Change Password</a></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-9" id="address" style="display: none;">
+                            <div class="dashboard-right">
+                                <div class="dashboard">
+                                    <div class="page-title">
+                                        <h2>My Addresses</h2>
+                                        <h5><a href="/user/addaddress">Add New Address</a></h4>
+                                    </div>
+                                    <div class="welcome-msg">
+                                        <p></p>
+                                    
+                                    </div>
+                                    <div class="box-account box-info">
+                                       {{#each address}}
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="box">
+                                                    <div class="box-title">
+                                                        <h3>Address</h3><a href="/user/deleteaddress/{{this.id}}">Delete</a><a href="/user/updateaddress/{{this.id}}" style="right: 50px;">Edit</a>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <h6>{{this.flat}} {{this.add1}} {{this.landmark}}</h6>
+                                                        <h6>{{this.city}} {{this.state}} {{this.zip}} </h6>
+                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                       {{/each}}
+                                    </div>
+                                    <div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section end -->
+
+ {{> footer}}
+{{> jslinks}}
