@@ -1,4 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-public/assets/css linguist-documentation
-views/ linguist-documentation
+public/* linguist-documentation
+views/* linguist-documentation
